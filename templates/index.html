@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Advanced GIS Web App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+
+<body>
+  <!-- Sidebar Container -->
+  <div id="sidebar">
+    <h2>Map Layers</h2>
+    <label><input type="checkbox" id="toggleStreets" checked> Streets</label><br>
+    <label><input type="checkbox" id="toggleBuildings" checked> Buildings</label><br>
+    <label><input type="checkbox" id="toggleBusinesses" checked> All Businesses</label>
+
+    <hr>
+    <h3>Filter Businesses</h3>
+    <label><input type="checkbox" class="biz-filter" data-type="pharmacy" checked> Pharmacy</label><br>
+    <label><input type="checkbox" class="biz-filter" data-type="restaurant" checked> Restaurant</label><br>
+    <label><input type="checkbox" class="biz-filter" data-type="store" checked> Store</label><br>
+    <label><input type="checkbox" class="biz-filter" data-type="coffeeshop" checked> Coffee Shop</label><br>
+    <label><input type="checkbox" class="biz-filter" data-type="print_shop" checked> Print Shop</label><br>
+    <label><input type="checkbox" class="biz-filter" data-type="bank" checked> Bank</label><br>
+
+    <hr>
+    <h3>Business Distribution</h3>
+    <div style="height: 250px; width: 100%; position: relative;">
+      <canvas id="business-chart"></canvas>
+    </div>
+    <button id="toggleChartType" style="width: 100%; margin-top: 10px; background: #2196F3;">
+      🔄 Switch to Bar Chart
+    </button>
+
+    <hr>
+    <button id="btnNearest">🔍 Find Nearest Business</button>
+    <button id="btnClearBuffer" style="background: #f44336; margin-top: 10px;">🗑️ Clear Buffer Analysis</button>
+
+    <!-- Add this after the existing sidebar content, before the closing </div> -->
+<hr>
+<h3>Business Management</h3>
+<button id="btnAddBusiness" style="background: #2196F3;">➕ Add Business</button>
+<button id="btnEditBusiness" style="background: #FFC107; margin-top: 5px;">✏️ Edit Selected</button>
+<button id="btnDeleteBusiness" style="background: #f44336; margin-top: 5px;">🗑️ Delete Selected</button>
+
+<!-- Add this modal at the bottom of the body, before the script tags -->
+<!-- Replace the existing modal div with this -->
+<div id="businessModal" style="display: none; position: fixed; top: 50px; left: 50px; z-index: 1001; width: 300px;">
+    <div id="modalHeader" style="background: #4CAF50; color: white; padding: 10px; cursor: move; border-radius: 5px 5px 0 0;">
+        <h3 id="modalTitle" style="margin: 0;">Add Business</h3>
+    </div>
+    <div style="background: white; padding: 15px; border-radius: 0 0 5px 5px; box-shadow: 0 0 10px rgba(0,0,0,0.3);">
+        <form id="businessForm">
+            <input type="hidden" id="businessId">
+            <label style="display: block; margin-bottom: 10px;">
+                Name:<br>
+                <input type="text" id="businessName" required style="width: 100%; padding: 5px;">
+            </label>
+            <label style="display: block; margin-bottom: 10px;">
+                Type:<br>
+                <select id="businessType" required style="width: 100%; padding: 5px;">
+                    <option value="">Select type</option>
+                    <option value="pharmacy">Pharmacy</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="store">Store</option>
+                    <option value="coffeeshop">Coffee Shop</option>
+                    <option value="print_shop">Print Shop</option>
+                    <option value="bank">Bank</option>
+                </select>
+            </label>
+            <div id="locationFields" style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">
+                    Latitude:<br>
+                    <input type="number" id="businessLat" step="any" required style="width: 100%; padding: 5px;">
+                </label>
+                <label style="display: block;">
+                    Longitude:<br>
+                    <input type="number" id="businessLng" step="any" required style="width: 100%; padding: 5px;">
+                </label>
+            </div>
+            <div style="text-align: right;">
+                <button type="button" id="btnCancel" style="padding: 5px 10px; margin-right: 5px;">Cancel</button>
+                <button type="submit" style="padding: 5px 10px; background: #4CAF50; color: white; border: none;">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+  </div>
+
+  <div id="map"></div>
+
+  
+<!-- Add this custom text control -->
+<div id="map-text-control" class="leaflet-control-custom-text">
+    <div class="title">Advanced GIS Web App - Backend</div>
+    <div class="developer">Developed By: Essam Afifi</div>
+    <div class="instruction">Ctrl+Click on a business for buffer analysis</div>
+</div>
+
+  <!-- Load libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Your custom JS -->
+  <script type="module" src="/static/js/main.js"></script>
+</body>
+</html>
