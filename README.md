@@ -106,9 +106,9 @@ Update app.py to point to your connection string
 python app.py
 Then open http://localhost:5000 in your browser.
 
+---
 
-
-🧠 About the Author
+## 📌 About the Author
 
 👤 Essam Afifi
 Canadian Data & AI Consultant | GIS Developer | Full-Stack Engineer
@@ -120,8 +120,7 @@ Built this project end-to-end — from spatial digitization in QGIS to a full-st
 🌍 LinkedIn: [Essam Afifi](https://www.linkedin.com/in/essam-afifi-a38a3a362/)
 📫 (esstoronto#gmail.com)
 
-
-
+---
 
 🔭 Part of a Multi-Phase GIS Project
 This is Phase 2 of a complete GIS solution:
