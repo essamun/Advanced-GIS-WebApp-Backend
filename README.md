@@ -56,20 +56,35 @@ This is the **second phase** of a modern multi-part GIS web application. It intr
 ## 📁 Folder Structure
 
 Advanced-GIS-WebApp-Backend/
+
 ├── static/
+
 │ ├── css/
+
 │ │ └── styles.css
+
 │ ├── js/
+
 │ │ ├── components/
+
 │ │ │ ├── map.js
+
 │ │ │ └── utils.js
+
 │ │ └── main.js
+
 │ └── images/
+
 ├── templates/
+
 │ └── index.html
+
 ├── app.py # Flask application logic (API + routing)
+
 ├── requirements.txt # Python dependencies
+
 ├── README.md
+
 └── screenshots/ # Screenshots for documentation
 
 
