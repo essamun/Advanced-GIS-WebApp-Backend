@@ -117,8 +117,8 @@ Fluent in English 🇬🇧, French 🇫🇷, and Arabic 🇪🇬
 
 Built this project end-to-end — from spatial digitization in QGIS to a full-stack GIS web application powered by Flask and PostGIS. Skilled in combining GIS, web technologies, and machine learning to deliver smart spatial solutions.
 
-🌍 LinkedIn: [Essam Afifi](https://www.linkedin.com/in/essam-afifi-a38a3a362/)
-📫 (esstoronto#gmail.com)
+🌍 [Essam Afifi](https://www.linkedin.com/in/essam-afifi-a38a3a362/)
+📫 esstoronto@gmail.com
 
 ---
 
