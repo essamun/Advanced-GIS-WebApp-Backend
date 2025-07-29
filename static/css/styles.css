@@ -1,0 +1,262 @@
+/* static/css/styles.css */
+body { margin: 0; padding: 0; }
+#map { 
+  height: 100vh; 
+  width: 100%;
+  background: #f0f0f0;
+}
+
+/* Sidebar styling */
+#sidebar {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  z-index: 1000;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  max-width: 250px;
+  font-family: sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+#sidebar h2 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+
+    #sidebar h3 {
+      margin: 10px 0 8px 0;
+      font-size: 14px;
+    }
+    
+    #sidebar hr {
+      margin: 10px 0;
+      border: 0;
+      border-top: 1px solid #eee;
+    }
+    
+    #sidebar label {
+      display: block;
+      margin: 3px 0;
+      cursor: pointer;
+    }
+    
+    #sidebar button {
+      width: 100%;
+      padding: 4px;
+      margin: 3px 0 0 0;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    
+    #business-chart-container {
+      margin: 5px 0;
+      height: 180px;
+    }
+
+    #sidebar > button {
+      margin-top: 5px;
+    }
+
+    #business-chart {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    #sidebar button:hover {
+      background: #45a049;
+    }
+
+    .leaflet-interactive.buffer-zone {
+      stroke-dasharray: 5, 5;
+    }
+
+    .highlighted-business {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .user-location-icon {
+      font-size: 24px;
+      text-align: center;
+      line-height: 32px;
+    }
+
+    /* Add to the existing style section */
+      #businessModal {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 20px;
+          z-index: 1001;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.3);
+          width: 300px;
+      }
+
+    #businessModal input, #businessModal select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    #businessModal label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #businessModal button[type="submit"] {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+    }
+
+    #businessModal #btnCancel {
+        padding: 5px 10px;
+        margin-right: 5px;
+    }
+
+    /* Dark overlay when modal is open */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+        display: none;
+    }
+
+    /* Add these to your existing style section */
+#businessModal {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1001;
+    width: 300px;
+}
+
+#modalHeader {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    cursor: move;
+    border-radius: 5px 5px 0 0;
+}
+
+#modalHeader h3 {
+    margin: 0;
+}
+
+#businessModal > div:last-child {
+    background: white;
+    padding: 15px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+#businessModal input, #businessModal select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#businessModal label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#businessModal button[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+#businessModal #btnCancel {
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+
+
+
+/* Add to your styles.css */
+#map-text-control {
+    position: absolute;
+    top: 5px; /* Match your sidebar */
+    left: 100px; /* Position to right of zoom controls */
+    z-index: 1000;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    font-family: sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 400px;
+}
+
+/* Rest of your existing .title, .developer, .instruction classes */
+
+
+
+/* Custom text control styles */
+.leaflet-control-custom-text {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    font-family: sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-left: 10px;
+    margin-top: 10px;
+    max-width: 200px;
+}
+
+.leaflet-control-custom-text .title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #0515f5;
+    margin-bottom: 3px;
+}
+
+.leaflet-control-custom-text .developer {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.leaflet-control-custom-text .instruction {
+    color: #666;
+    font-style: italic;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+/* Adjust the zoom control position to make space */
+.leaflet-top.leaflet-left {
+    margin-top: 10px; /* Matches your sidebar top position */
+}
