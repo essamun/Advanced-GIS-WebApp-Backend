@@ -13,13 +13,13 @@ This is the **second phase** of a modern multi-part GIS web application. It intr
 
 ## 🧰 Tools & Technologies
 
-- **QGIS** – Digitizing and spatial data prep
-- **PostgreSQL + PostGIS** – Spatial database engine
-- **Flask** – Lightweight Python web framework for the GIS API
-- **Leaflet.js** – Map rendering and UI interactivity
-- **Chart.js** – Dynamic business-type charts
-- **Shapely** – Python geometry analysis (buffer, nearest point)
-- **Turf.js** – Client-side geoprocessing
+- **QGIS** – Digitizing and spatial data prep  
+- **PostgreSQL + PostGIS** – Spatial database engine  
+- **Flask** – Lightweight Python web framework for the GIS API  
+- **Leaflet.js** – Map rendering and UI interactivity  
+- **Chart.js** – Dynamic business-type charts  
+- **Shapely** – Python geometry analysis (buffer, nearest point)  
+- **Turf.js** – Client-side geoprocessing  
 
 ---
 
@@ -77,11 +77,13 @@ Advanced-GIS-WebApp-Backend/
 
 ## 🛠️ Setup & Installation
 
+> ⚠️ **Note:** This app requires a PostgreSQL database with PostGIS enabled. Without it, CRUD and spatial features won't function.
+
 ### 1. Clone the Repo
 
-```bash
 git clone https://github.com/essamun/Advanced-GIS-WebApp-Backend.git
 cd Advanced-GIS-WebApp-Backend
+
 
 2. Create Virtual Environment
 
@@ -92,24 +94,27 @@ venv\Scripts\activate  # On Windows
 
 pip install -r requirements.txt
 
+4. Set Up PostgreSQL + PostGIS
+ - Install PostgreSQL and enable the PostGIS extension.
 
-4. Setup PostgreSQL/PostGIS
-Install PostgreSQL and PostGIS on your system
-
-Create a database and enable PostGIS:
+ - Create a database, then run:
+ sql
 
 CREATE EXTENSION postgis;
 
+Import initial spatial data (manually or via SQL).
 
-Update app.py to point to your connection string
+Update your database connection string inside app.py.
+
+5. Run the App
 
 python app.py
-Then open http://localhost:5000 in your browser.
+
+Open http://localhost:5000 in your browser.
 
 ---
 
-## 📌 About the Author
-
+🧠 About the Author
 👤 Essam Afifi
 Canadian Data & AI Consultant | GIS Developer | Full-Stack Engineer
 MSc in Geomatics | PMP® Certified | 20+ Years of Experience
@@ -117,20 +122,22 @@ Fluent in English 🇬🇧, French 🇫🇷, and Arabic 🇪🇬
 
 Built this project end-to-end — from spatial digitization in QGIS to a full-stack GIS web application powered by Flask and PostGIS. Skilled in combining GIS, web technologies, and machine learning to deliver smart spatial solutions.
 
-🌍 [Essam Afifi](https://www.linkedin.com/in/essam-afifi-a38a3a362/)
-📫 esstoronto@gmail.com
+
+🌍 LinkedIn: [Essam Afifi](https://www.linkedin.com/in/essam-afifi-a38a3a362/)
+📫 (esstoronto#gmail.com)
 
 ---
 
 🔭 Part of a Multi-Phase GIS Project
 This is Phase 2 of a complete GIS solution:
 
-✅ Phase 1 – Static GIS Frontend
+✅ Phase 1 – Static GIS Frontend (GitHub)
 
 🔁 Phase 2 – Flask + PostGIS Backend (this repo)
 
-🧠 Phase 3 – Coming soon: ML-powered spatial clustering and predictive GIS tools
+🧠 Phase 3 – ML-Powered GIS Tools (Coming Soon)
 
 🙌 Contributions
-Built using real-world use cases near Toronto (Yonge & Finch), this project simulates how spatial databases and web tools come together to power modern GIS workflows.
+Built using real-world use cases near Toronto (Yonge & Finch), this project demonstrates how spatial databases, interactive maps, and modern web frameworks come together to solve real GIS problems.
+
 
